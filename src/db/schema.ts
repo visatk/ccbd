@@ -1,9 +1,9 @@
 import { sqliteTable, integer, text, real } from 'drizzle-orm/sqlite-core';
 
 // --------------------------------------------------------
-// Table: exchangerix_content
+// Table: content
 // --------------------------------------------------------
-export const content = sqliteTable('exchangerix_content', {
+export const content = sqliteTable('content', {
   contentId: integer('content_id').primaryKey({ autoIncrement: true }),
   language: text('language').notNull().default(''),
   name: text('name').notNull().default(''),
@@ -19,9 +19,9 @@ export const content = sqliteTable('exchangerix_content', {
 });
 
 // --------------------------------------------------------
-// Table: exchangerix_countries
+// Table: countries
 // --------------------------------------------------------
-export const countries = sqliteTable('exchangerix_countries', {
+export const countries = sqliteTable('countries', {
   countryId: integer('country_id').primaryKey({ autoIncrement: true }),
   code: text('code', { length: 2 }).notNull().default(''),
   name: text('name', { length: 100 }).notNull().default(''),
@@ -32,9 +32,9 @@ export const countries = sqliteTable('exchangerix_countries', {
 });
 
 // --------------------------------------------------------
-// Table: exchangerix_currencies
+// Table: currencies
 // --------------------------------------------------------
-export const currencies = sqliteTable('exchangerix_currencies', {
+export const currencies = sqliteTable('currencies', {
   currencyId: integer('currency_id').primaryKey({ autoIncrement: true }),
   gatewayId: integer('gateway_id').notNull().default(0),
   currencyName: text('currency_name').notNull().default(''),
@@ -62,9 +62,9 @@ export const currencies = sqliteTable('exchangerix_currencies', {
 });
 
 // --------------------------------------------------------
-// Table: exchangerix_email_templates
+// Table: email_templates
 // --------------------------------------------------------
-export const emailTemplates = sqliteTable('exchangerix_email_templates', {
+export const emailTemplates = sqliteTable('email_templates', {
   templateId: integer('template_id').primaryKey({ autoIncrement: true }),
   language: text('language').notNull().default(''),
   emailName: text('email_name').notNull().default(''),
@@ -74,9 +74,9 @@ export const emailTemplates = sqliteTable('exchangerix_email_templates', {
 });
 
 // --------------------------------------------------------
-// Table: exchangerix_exchanges
+// Table: exchanges
 // --------------------------------------------------------
-export const exchanges = sqliteTable('exchangerix_exchanges', {
+export const exchanges = sqliteTable('exchanges', {
   exchangeId: integer('exchange_id').primaryKey({ autoIncrement: true }),
   exdirectionId: integer('exdirection_id').notNull().default(0),
   userId: integer('user_id').notNull().default(0),
@@ -107,9 +107,9 @@ export const exchanges = sqliteTable('exchangerix_exchanges', {
 });
 
 // --------------------------------------------------------
-// Table: exchangerix_exdirections
+// Table: exdirections
 // --------------------------------------------------------
-export const exdirections = sqliteTable('exchangerix_exdirections', {
+export const exdirections = sqliteTable('exdirections', {
   exdirectionId: integer('exdirection_id').primaryKey({ autoIncrement: true }),
   fromCurrency: integer('from_currency').notNull().default(0),
   toCurrency: integer('to_currency').notNull().default(0),
@@ -135,9 +135,9 @@ export const exdirections = sqliteTable('exchangerix_exdirections', {
 });
 
 // --------------------------------------------------------
-// Table: exchangerix_gateways
+// Table: gateways
 // --------------------------------------------------------
-export const gateways = sqliteTable('exchangerix_gateways', {
+export const gateways = sqliteTable('gateways', {
   gatewayId: integer('gateway_id').primaryKey({ autoIncrement: true }),
   gatewayName: text('gateway_name').notNull().default(''),
   logo: text('logo').notNull().default(''),
@@ -156,9 +156,9 @@ export const gateways = sqliteTable('exchangerix_gateways', {
 });
 
 // --------------------------------------------------------
-// Table: exchangerix_languages
+// Table: languages
 // --------------------------------------------------------
-export const languages = sqliteTable('exchangerix_languages', {
+export const languages = sqliteTable('languages', {
   languageId: integer('language_id').primaryKey({ autoIncrement: true }),
   languageCode: text('language_code', { length: 2 }).notNull().default(''),
   language: text('language').notNull().default(''),
@@ -168,9 +168,9 @@ export const languages = sqliteTable('exchangerix_languages', {
 });
 
 // --------------------------------------------------------
-// Table: exchangerix_news
+// Table: news
 // --------------------------------------------------------
-export const news = sqliteTable('exchangerix_news', {
+export const news = sqliteTable('news', {
   newsId: integer('news_id').primaryKey({ autoIncrement: true }),
   newsTitle: text('news_title').notNull().default(''),
   newsDescription: text('news_description'),
@@ -180,9 +180,9 @@ export const news = sqliteTable('exchangerix_news', {
 });
 
 // --------------------------------------------------------
-// Table: exchangerix_pmethods
+// Table: pmethods
 // --------------------------------------------------------
-export const pmethods = sqliteTable('exchangerix_pmethods', {
+export const pmethods = sqliteTable('pmethods', {
   pmethodId: integer('pmethod_id').primaryKey({ autoIncrement: true }),
   pmethodTitle: text('pmethod_title').notNull().default(''),
   minAmount: real('min_amount').notNull().default(0.0000),
@@ -192,9 +192,9 @@ export const pmethods = sqliteTable('exchangerix_pmethods', {
 });
 
 // --------------------------------------------------------
-// Table: exchangerix_reserve_requests
+// Table: reserve_requests
 // --------------------------------------------------------
-export const reserveRequests = sqliteTable('exchangerix_reserve_requests', {
+export const reserveRequests = sqliteTable('reserve_requests', {
   reserveRequestId: integer('reserve_request_id').primaryKey({ autoIncrement: true }),
   userId: integer('user_id').notNull().default(0),
   exdirectionId: integer('exdirection_id').notNull().default(0),
@@ -213,9 +213,9 @@ export const reserveRequests = sqliteTable('exchangerix_reserve_requests', {
 });
 
 // --------------------------------------------------------
-// Table: exchangerix_reviews
+// Table: reviews
 // --------------------------------------------------------
-export const reviews = sqliteTable('exchangerix_reviews', {
+export const reviews = sqliteTable('reviews', {
   reviewId: integer('review_id').primaryKey({ autoIncrement: true }),
   exchangeId: integer('exchange_id').notNull().default(0),
   userId: integer('user_id').notNull().default(0),
@@ -229,18 +229,18 @@ export const reviews = sqliteTable('exchangerix_reviews', {
 });
 
 // --------------------------------------------------------
-// Table: exchangerix_settings
+// Table: settings
 // --------------------------------------------------------
-export const settings = sqliteTable('exchangerix_settings', {
+export const settings = sqliteTable('settings', {
   settingId: integer('setting_id').primaryKey({ autoIncrement: true }),
   settingKey: text('setting_key').notNull().default(''),
   settingValue: text('setting_value'),
 });
 
 // --------------------------------------------------------
-// Table: exchangerix_transactions
+// Table: transactions
 // --------------------------------------------------------
-export const transactions = sqliteTable('exchangerix_transactions', {
+export const transactions = sqliteTable('transactions', {
   transactionId: integer('transaction_id').primaryKey({ autoIncrement: true }),
   referenceId: text('reference_id').notNull().default(''),
   userId: integer('user_id').notNull().default(0),
@@ -260,9 +260,9 @@ export const transactions = sqliteTable('exchangerix_transactions', {
 });
 
 // --------------------------------------------------------
-// Table: exchangerix_users
+// Table: users
 // --------------------------------------------------------
-export const users = sqliteTable('exchangerix_users', {
+export const users = sqliteTable('users', {
   userId: integer('user_id').primaryKey({ autoIncrement: true }),
   userGroup: integer('user_group', { mode: 'boolean' }).notNull().default(false),
   username: text('username').notNull().default(''),
@@ -289,7 +289,11 @@ export const users = sqliteTable('exchangerix_users', {
   verifiedDocument: text('verified_document').notNull().default(''),
   verifiedAddress: text('verified_address').notNull().default(''),
   verificationProgress: text('verification_progress').notNull().default(''),
-  smsCode: text('sms_code').notNull().default(''),
+  
+  // Removed smsCode and replaced with GitHub and Google Auth IDs
+  githubId: text('github_id').notNull().default(''),
+  googleId: text('google_id').notNull().default(''),
+  
   status: text('status', { enum: ['active', 'inactive'] }).notNull().default('active'),
   authProvider: text('auth_provider').notNull().default(''),
   authUid: text('auth_uid').notNull().default(''),
