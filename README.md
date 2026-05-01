@@ -62,7 +62,6 @@ crypto-exchange-platform/
 ## 🚀 ৫. ইমপ্লিমেন্টেশন রোডম্যাপ (Phase-by-Phase Roadmap)
 
 ### Phase 1: Foundation (Current Target)
-- [ ] Monorepo সেটআপ (npm/pnpm workspaces)।
 - [ ] Cloudflare Workers-এ Hono সেটআপ এবং বেসিক রাউটিং।
 - [ ] `packages/db`-তে Drizzle ORM দিয়ে D1 স্কিমা তৈরি (`users` টেবিল দিয়ে শুরু)।
 - [ ] JWT Auth middleware তৈরি।
