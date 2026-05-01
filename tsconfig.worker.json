@@ -1,8 +1,30 @@
 {
-  "extends": "./tsconfig.node.json",
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.worker.tsbuildinfo",
-    "types": ["./worker-configuration.d.ts", "vite/client"],
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    
+    /* Cloudflare Edge Types */
+    "types": ["./worker-configuration.d.ts"],
+    "lib": ["ES2023"],
+    
+    /* Hono JSX (Optional Edge SSR) */
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx",
+    
+    /* Strict Type-Checking */
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitAny": true,
+    
+    /* Resolution & Aliases */
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
-  "include": ["worker"]
+  "include": ["src/server.ts", "src/db/**/*.ts", "src/api/**/*.ts"]
 }
