@@ -9,7 +9,8 @@
 		"lint": "eslint .",
 		"preview": "npm run build && vite preview",
 		"deploy": "npm run build && wrangler deploy",
-		"cf-typegen": "wrangler types"
+		"cf-typegen": "wrangler types --env-interface CloudflareBindings",
+		"better-auth-gen-schema": "npm run @better-auth/cli@latest generate --config ./better-auth.config.ts --output ./src/db/schema.ts"
 	},
 	"dependencies": {
 		"@base-ui/react": "^1.4.1",
