@@ -18,7 +18,7 @@
 		"@phosphor-icons/react": "^2.1.10",
 		"@fontsource-variable/geist": "^5.2.8",
 		"@tailwindcss/vite": "^4.2.4",
-		"@cloudflare/workers-oauth-provider": "^0.4.0",
+		"better-auth": "^1.6.9",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"cmdk": "^1.1.1",
